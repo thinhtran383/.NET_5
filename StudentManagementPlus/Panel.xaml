@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentManagementPlus"
         mc:Ignorable="d"
-        Title="Panel" Height="450" Width="800">
+        Title="Panel" Height="300" Width="500">
+    <Window.Background>
+        <ImageBrush ImageSource="Image/pngtree-blue-background-and-wallpaper-hd-image_1462926.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+
     <Grid>
-        
+        <Button x:Name="btnThongTin" Content="Quản lý thông tin" HorizontalAlignment="Left" Margin="70,59,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnThongTin_Click"/>
+        <Button x:Name="btnDiem" Content="Quản lý điểm" HorizontalAlignment="Left" Margin="70,122,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
+        <Button x:Name="btnDangKi" Content="Quản lý đăng kí" HorizontalAlignment="Left" Margin="323,59,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
+        <Button x:Name="btnDoiMatKhau" Content="Đổi mật khẩu" HorizontalAlignment="Left" Margin="322,122,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
+        <Button x:Name="btnDangXuat" Content="Đăng xuất" HorizontalAlignment="Left" Margin="370,217,0,0" VerticalAlignment="Top" Height="30" Width="110" Click="btnDangXuat_Click"/>
+
     </Grid>
 </Window>

@@ -20,7 +20,7 @@ namespace StudentManagementPlus {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow:Window {
-        private static string connectionString = @"Data Source=THINHTRAN\MSSQLSERVER02;Initial Catalog=quanlysinhvien;Integrated Security=True;";
+        
         
         private static List<Account> accounts = new List<Account>();
 
@@ -32,7 +32,7 @@ namespace StudentManagementPlus {
 
             try {
                 string sql = "Select * from adminaccount";
-                SqlConnection connection = new SqlConnection(connectionString);
+                SqlConnection connection = new SqlConnection(ConnectionString.connectionString);
                 SqlCommand command = new SqlCommand(sql,connection);
                 connection.Open();
                 var data = command.ExecuteReader();
