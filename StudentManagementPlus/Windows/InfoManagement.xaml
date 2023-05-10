@@ -13,21 +13,24 @@
             </StackPanel>
         </Label>
         <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="183,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="177" Height="30" TextChanged="tbSearch_TextChanged" />
-        <DataGrid   RowHeight="30" x:Name="dgStudent"   Margin="0,60,0,196"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="True" IsReadOnly="True" Loaded="dgStudent_Loaded" SelectionChanged="dgStudent_SelectionChanged"  />
-        <Label Content="Student Id:" HorizontalAlignment="Left" Margin="32,418,0,0" VerticalAlignment="Top"/>
-        <Label Content="Student Name:" HorizontalAlignment="Left" Margin="32,453,0,0" VerticalAlignment="Top"/>
-        <Label Content="Gender:" HorizontalAlignment="Left" Margin="32,486,0,0" VerticalAlignment="Top"/>
-        <Label Content="Address:" HorizontalAlignment="Left" Margin="407,418,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="407,453,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.117"/>
-        <Label Content="Phone:" HorizontalAlignment="Left" Margin="407,486,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dob:" HorizontalAlignment="Left" Margin="407,524,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.798,0.579"/>
-        <TextBox x:Name="tbId" HorizontalAlignment="Left" Margin="120,422,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tbName" HorizontalAlignment="Left" Margin="120,457,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tbAddress" HorizontalAlignment="Left" Margin="470,422,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="470,457,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="3.125,3.454"/>
-        <TextBox x:Name="tbPhone" HorizontalAlignment="Left" Margin="470,490,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbGender" HorizontalAlignment="Left" Margin="120,490,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="pickDate" HorizontalAlignment="Left" Margin="470,526,0,0" VerticalAlignment="Top" Width="120"/>
+        <DataGrid   RowHeight="30" x:Name="dgStudent"   Margin="0,60,0,311"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="True" IsReadOnly="True" Loaded="dgStudent_Loaded" SelectionChanged="dgStudent_SelectionChanged"  />
+        <Label Content="Student Id:" HorizontalAlignment="Left" Margin="32,384,0,0" VerticalAlignment="Top"/>
+        <Label Content="Student Name:" HorizontalAlignment="Left" Margin="32,419,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gender:" HorizontalAlignment="Left" Margin="32,452,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address:" HorizontalAlignment="Left" Margin="407,384,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="407,419,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.117"/>
+        <Label Content="Phone:" HorizontalAlignment="Left" Margin="407,452,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dob:" HorizontalAlignment="Left" Margin="407,490,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.798,0.579"/>
+        <TextBox x:Name="tbId" HorizontalAlignment="Left" Margin="120,388,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbName" HorizontalAlignment="Left" Margin="120,423,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbAddress" HorizontalAlignment="Left" Margin="470,388,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="470,423,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="3.125,3.454"/>
+        <TextBox x:Name="tbPhone" HorizontalAlignment="Left" Margin="470,456,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbGender" HorizontalAlignment="Left" Margin="120,456,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="pickDate" HorizontalAlignment="Left" Margin="470,492,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="685,425,0,0" VerticalAlignment="Top" Width="50" Click="btnDelete_Click"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="685,467,0,0" VerticalAlignment="Top" Width="50" Click="btnUpdate_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="685,384,0,0" VerticalAlignment="Top" Width="50" Click="btnAdd_Click_1"/>
 
 
     </Grid>

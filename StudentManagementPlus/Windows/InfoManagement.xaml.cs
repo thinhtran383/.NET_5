@@ -33,6 +33,16 @@ namespace StudentManagementPlus.Windows {
             cbGender.Items.Add("Female");
         }
 
+        private void clear() {
+            tbName.Text = "";
+            tbId.Text = "";
+            cbGender.Text = "";
+            tbAddress.Text = "";
+            tbEmail.Text = "";
+            tbPhone.Text = "";
+            pickDate.SelectedDate = null;
+        }
+
         private void loadStudent() {
             try {
                 string sql = "Select * from students";
@@ -79,6 +89,91 @@ namespace StudentManagementPlus.Windows {
             string search = tbSearch.Text.ToLower();
             var result = studentList.Where(s => s.StudentName.ToLower().Contains(search));
             dgStudent.ItemsSource = result;
+        }
+
+       
+
+        private void btnAdd_Click_1(object sender,RoutedEventArgs e) {
+            // kiem tra du lieu nhap vao neu rong thi khong lam gi
+            if(tbId.Text == "" || tbName.Text == "" || cbGender.Text == "" || tbAddress.Text == "" || tbEmail.Text == "" || tbPhone.Text == "" || pickDate.SelectedDate == null) {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
+
+            // kiem tra id da ton tai chua
+            foreach(Student student in studentList) {
+                if(student.StudentId == tbId.Text) {
+                    MessageBox.Show("Id đã tồn tại");
+                    return;
+                }
+            }
+
+            string sql = "Insert into students values(@studentId,@studentName,@studentGender,@studentAddress,@studentEmail,@studentPhone,@studentBirthday)";
+            SqlConnection connection = new SqlConnection(ConnectionString.connectionString);
+            SqlCommand command = new SqlCommand(sql,connection);
+            command.Parameters.AddWithValue("@studentId",tbId.Text);
+            command.Parameters.AddWithValue("@studentName",tbName.Text);
+            command.Parameters.AddWithValue("@studentGender",cbGender.Text);
+            command.Parameters.AddWithValue("@studentAddress",tbAddress.Text);
+            command.Parameters.AddWithValue("@studentEmail",tbEmail.Text);
+            command.Parameters.AddWithValue("@studentPhone",tbPhone.Text);
+            command.Parameters.AddWithValue("@studentBirthday",pickDate.SelectedDate);
+            connection.Open();
+            int result = command.ExecuteNonQuery();
+            if(result > 0) {
+                MessageBox.Show("Thêm thành công");
+                Student student = new Student(tbId.Text,tbName.Text,cbGender.Text,tbAddress.Text,tbEmail.Text,tbPhone.Text,pickDate.SelectedDate.Value);
+                studentList.Add(student);
+                clear();
+            } else {
+                MessageBox.Show("Thêm thất bại");
+            }
+        }
+
+        private void btnDelete_Click(object sender,RoutedEventArgs e) {
+            string sql = "Delete from students where studentId = @studentId";
+            SqlConnection connection = new SqlConnection(ConnectionString.connectionString);
+            SqlCommand command = new SqlCommand(sql,connection);
+            command.Parameters.AddWithValue("@studentId",tbId.Text);
+            connection.Open();
+            int result = command.ExecuteNonQuery();
+            if(result > 0) {
+                MessageBox.Show("Xóa thành công");
+                Student student = studentList.Where(s => s.StudentId == tbId.Text).FirstOrDefault();
+                studentList.Remove(student);
+                clear();
+            } else {
+                MessageBox.Show("Xóa thất bại");
+            }
+        }
+
+        private void btnUpdate_Click(object sender,RoutedEventArgs e) {
+            string sql = "Update students set studentName = @studentName, studentGender = @studentGender, studentAddress = @studentAddress, studentEmail = @studentEmail, studentPhone = @studentPhone, studentBirthday = @studentBirthday where studentId = @studentId";
+            SqlConnection connection = new SqlConnection(ConnectionString.connectionString);
+            SqlCommand command = new SqlCommand(sql,connection);
+            command.Parameters.AddWithValue("@studentId",tbId.Text);
+            command.Parameters.AddWithValue("@studentName",tbName.Text);
+            command.Parameters.AddWithValue("@studentGender",cbGender.Text);
+            command.Parameters.AddWithValue("@studentAddress",tbAddress.Text);
+            command.Parameters.AddWithValue("@studentEmail",tbEmail.Text);
+            command.Parameters.AddWithValue("@studentPhone",tbPhone.Text);
+            command.Parameters.AddWithValue("@studentBirthday",pickDate.SelectedDate);
+            connection.Open();
+            int result = command.ExecuteNonQuery();
+            if(result > 0) {
+                MessageBox.Show("Cập nhật thành công");
+                Student student = studentList.Where(s => s.StudentId == tbId.Text).FirstOrDefault();
+                student.StudentName = tbName.Text;
+                student.StudentGender = cbGender.Text;
+                student.StudentAddress = tbAddress.Text;
+                student.StudentEmail = tbEmail.Text;
+                student.StudentPhone = tbPhone.Text;
+                student.StudentBirthday = pickDate.SelectedDate.Value;
+                clear();
+                dgStudent.Items.Refresh();
+            } else {
+                MessageBox.Show("Cập nhật thất bại");
+            }
         }
     }
 }
