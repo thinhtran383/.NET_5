@@ -2,13 +2,24 @@
 
 namespace StudentManagementPlus.Models {
     public class Account {
-        private string Username { get; set; }
-        private string Password { get; set; }
+        private string username;
+        private string password;
 
-        public Account(string Username, string Password) {
-            this.Username = Username;
-            this.Password = Password;
+        public Account(string username, string password) {
+            this.username = username;
+            this.password = password;
         }
+
+        public string Username {
+            get => username;
+            set => username = value;
+        }
+
+        public string Password {
+            get => password;
+            set => password = value;
+        }
+
 
     }
 }
