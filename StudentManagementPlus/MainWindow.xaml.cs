@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using StudentManagementPlus.Models;
 
 namespace StudentManagementPlus {
@@ -21,12 +9,15 @@ namespace StudentManagementPlus {
     /// </summary>
     public partial class MainWindow:Window {
         
-        
+       
         private static List<Account> accounts = new List<Account>();
 
         public MainWindow() {
             InitializeComponent();
         }
+
+        
+        
 
         private void btnSignin_Click(object sender,RoutedEventArgs e) {
 
@@ -58,7 +49,7 @@ namespace StudentManagementPlus {
             foreach(var account in accounts) {
                 if(account.Username == usernameInput && account.Password == passwordInput) {
                     MessageBox.Show("Đăng nhập thành công");
-                    Panel panel = new Panel();
+                    Panel panel = new Panel(usernameInput);
                     this.Close();
                     panel.Show();
                     return;

@@ -9,10 +9,10 @@
     <Grid Background="White" Margin="0,0,0,-6">
         <Label  FontWeight="Medium" HorizontalAlignment="Left" Margin="82,19,0,0" VerticalAlignment="Top" FontSize="14">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Tìm kiếm: "/>
+                <TextBlock Text="Search: "/>
             </StackPanel>
         </Label>
-        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="183,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="177" Height="30" TextChanged="tbSearch_TextChanged" />
+        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="180,19,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="177" Height="30" TextChanged="tbSearch_TextChanged" />
         <DataGrid   RowHeight="30" x:Name="dgStudent"   Margin="0,60,0,311"  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="True" IsReadOnly="True" Loaded="dgStudent_Loaded" SelectionChanged="dgStudent_SelectionChanged"  />
         <Label Content="Student Id:" HorizontalAlignment="Left" Margin="32,384,0,0" VerticalAlignment="Top"/>
         <Label Content="Student Name:" HorizontalAlignment="Left" Margin="32,419,0,0" VerticalAlignment="Top"/>
@@ -28,8 +28,8 @@
         <TextBox x:Name="tbPhone" HorizontalAlignment="Left" Margin="470,456,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbGender" HorizontalAlignment="Left" Margin="120,456,0,0" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="pickDate" HorizontalAlignment="Left" Margin="470,492,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="685,425,0,0" VerticalAlignment="Top" Width="50" Click="btnDelete_Click"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="685,467,0,0" VerticalAlignment="Top" Width="50" Click="btnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="685,425,0,0" VerticalAlignment="Top" Width="50" Click="btnDelete_Click" IsEnabled="False"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="685,467,0,0" VerticalAlignment="Top" Width="50" Click="btnUpdate_Click" IsEnabled="False"/>
         <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="685,384,0,0" VerticalAlignment="Top" Width="50" Click="btnAdd_Click_1"/>
 
 

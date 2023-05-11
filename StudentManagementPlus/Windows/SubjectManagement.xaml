@@ -1,0 +1,24 @@
+﻿<Window x:Class="StudentManagementPlus.Windows.SubjectManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentManagementPlus.Windows"
+        mc:Ignorable="d"
+        Title="SubjectManagement" Height="800" Width="400">
+    <Grid>
+        <DataGrid x:Name="dgSubject" Margin="0,75,0,365" Loaded="dgSubject_Loaded" SelectionChanged="dgSubject_SelectionChanged" IsReadOnly="True" HorizontalAlignment="Center" Width="380"/>
+        <Label Content="Subject Id:" HorizontalAlignment="Left" Margin="60,472,0,0" VerticalAlignment="Top"/>
+        <Label Content="Subject Name:" HorizontalAlignment="Left" Margin="60,522,0,0" VerticalAlignment="Top"/>
+        <Label Content="Subject Credits:" HorizontalAlignment="Left" Margin="60,572,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbSubjectId" HorizontalAlignment="Left" Margin="175,476,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSubjectName" HorizontalAlignment="Left" Margin="175,526,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSubjectCredit" HorizontalAlignment="Left" Margin="175,576,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="51,658,0,0" VerticalAlignment="Top" Width="52" Click="btnAdd_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="183,658,0,0" VerticalAlignment="Top" Width="52" Click="btnDelete_Click" IsEnabled="False"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="303,658,0,0" VerticalAlignment="Top" Width="52" IsEnabled="False" Click="btnUpdate_Click"/>
+        <Label FontSize="14" Content="Search:" FontWeight="Medium" HorizontalAlignment="Left" Margin="40,25,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Margin="128,30,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="162" Height="24" TextChanged="tbSearch_TextChanged"/>
+
+    </Grid>
+</Window>

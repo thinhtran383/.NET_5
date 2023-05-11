@@ -5,8 +5,11 @@ namespace StudentManagementPlus {
     /// Interaction logic for Panel.xaml
     /// </summary>
     public partial class Panel:Window {
-        public Panel() {
+        private string username;
+
+        public Panel(string username) {
             InitializeComponent();
+            this.username = username;
         }
 
         private void btnDangXuat_Click(object sender,RoutedEventArgs e) {
@@ -23,6 +26,22 @@ namespace StudentManagementPlus {
         private void btnThongTin_Click(object sender,RoutedEventArgs e) {
             InfoManagement info = new InfoManagement();
             info.ShowDialog();
+        }
+
+        private void btnDoiMatKhau_Click(object sender,RoutedEventArgs e) {
+            ChangePassword change = new ChangePassword(username);
+            change.ShowDialog();
+        }
+
+        private void btnDiem_Click(object sender,RoutedEventArgs e) {
+            GradeManagement grade = new GradeManagement();
+            grade.ShowDialog();
+
+        }
+
+        private void btnMonHoc_Click(object sender,RoutedEventArgs e) {
+            SubjectManagement subject = new SubjectManagement();
+            subject.ShowDialog();
         }
     }
 }

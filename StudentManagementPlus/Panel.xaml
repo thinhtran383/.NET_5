@@ -12,9 +12,9 @@
 
     <Grid>
         <Button x:Name="btnThongTin" Content="Quản lý thông tin" HorizontalAlignment="Left" Margin="70,59,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnThongTin_Click"/>
-        <Button x:Name="btnDiem" Content="Quản lý điểm" HorizontalAlignment="Left" Margin="70,122,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
-        <Button x:Name="btnDangKi" Content="Quản lý đăng kí" HorizontalAlignment="Left" Margin="323,59,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
-        <Button x:Name="btnDoiMatKhau" Content="Đổi mật khẩu" HorizontalAlignment="Left" Margin="322,122,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
+        <Button x:Name="btnDiem" Content="Quản lý điểm" HorizontalAlignment="Left" Margin="70,122,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnDiem_Click"/>
+        <Button x:Name="btnMonHoc" Content="Quản lý môn học" HorizontalAlignment="Left" Margin="323,59,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnMonHoc_Click" />
+        <Button x:Name="btnDoiMatKhau" Content="Đổi mật khẩu" HorizontalAlignment="Left" Margin="322,122,0,0" VerticalAlignment="Top" Height="30" Width="110" Click="btnDoiMatKhau_Click"/>
         <Button x:Name="btnDangXuat" Content="Đăng xuất" HorizontalAlignment="Left" Margin="370,217,0,0" VerticalAlignment="Top" Height="30" Width="110" Click="btnDangXuat_Click"/>
 
     </Grid>
